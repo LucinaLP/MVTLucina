@@ -1,0 +1,47 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'MVTLucinaApp\styles.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <h1> ¡¡Hola!! </h1>
+    <h2> Mi nombre es {{ nombre }}</h2>
+    <table>
+        <thead>
+            <td>Nombre</td>
+            <td>Fecha de Nacimiento</td>
+            <td>Edad</td>
+            <td>Parentezco</td>
+        </thead>
+        <table>
+            <thead>
+                <td style="color: purple;text-align:justify">Familia Conviviente</td>
+            </thead>
+        {% for familiarConviviente in familiarConviviente %}
+        <tr>
+            <td>{{familiarConviviente.nombre}}</td>
+            <td>{{familiarConviviente.nacimiento}}</td>
+            <td>{{familiarConviviente.edad}}</td>    
+            <td>{{familiarConviviente.parentezco}}</td>
+        </tr>
+        {% endfor %}
+    <table>
+        <thead>
+            <td style="color: darkgreen; text-align:justify">Familia Extendida</td>
+        </thead>
+        {% for familiarExtendida in familiarExtendida %}
+        <tr>
+            <td>{{familiarExtendida.nombre}}</td>
+            <td>{{familiarExtendida.nacimiento}}</td>
+            <td>{{familiarExtendida.edad}}</td>    
+            <td>{{familiarExtendida.parentezco}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
